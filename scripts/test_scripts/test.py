@@ -9,5 +9,13 @@ file_path = os.path.join(script_dir, '../../data/data_source_final.xlsx') #<-- d
 # Read in the excel file
 all_sheets = pd.read_excel(file_path, sheet_name=None)
 
-print(all_sheets.keys())
+# test that the excel sheet is loaded --> print(all_sheets.keys())
 
+# load the data sheets from excel as data frames
+market_mapping_df = all_sheets['market_mapping']
+asset_oec_df = all_sheets['asset_oec']
+rentals_df = all_sheets['rentals']
+
+print(market_mapping_df.info())
+print(asset_oec_df.info())
+print(rentals_df.info())
