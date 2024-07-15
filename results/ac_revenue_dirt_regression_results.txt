@@ -1,0 +1,26 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:           revenue_dirt   R-squared:                       0.990
+Model:                            OLS   Adj. R-squared:                  0.987
+Method:                 Least Squares   F-statistic:                     330.8
+Date:                Mon, 15 Jul 2024   Prob (F-statistic):           1.17e-07
+Time:                        15:25:07   Log-Likelihood:                -121.38
+No. Observations:                  10   AIC:                             248.8
+Df Residuals:                       7   BIC:                             249.7
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const        -3.177e+04    2.8e+04     -1.135      0.294    -9.8e+04    3.44e+04
+aerial_count   -92.6640     93.055     -0.996      0.353    -312.705     127.377
+dirt_count    5766.0169    239.006     24.125      0.000    5200.857    6331.177
+==============================================================================
+Omnibus:                        5.182   Durbin-Watson:                   1.483
+Prob(Omnibus):                  0.075   Jarque-Bera (JB):                1.656
+Skew:                          -0.893   Prob(JB):                        0.437
+Kurtosis:                       3.885   Cond. No.                         537.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

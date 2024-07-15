@@ -1,0 +1,25 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:       utilization_dirt   R-squared:                       0.130
+Model:                            OLS   Adj. R-squared:                  0.021
+Method:                 Least Squares   F-statistic:                     1.191
+Date:                Mon, 15 Jul 2024   Prob (F-statistic):              0.307
+Time:                        15:25:07   Log-Likelihood:                 18.765
+No. Observations:                  10   AIC:                            -33.53
+Df Residuals:                       8   BIC:                            -32.93
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.2708      0.111      2.431      0.041       0.014       0.528
+aerial_pct    -0.1436      0.132     -1.091      0.307      -0.447       0.160
+==============================================================================
+Omnibus:                        0.821   Durbin-Watson:                   2.536
+Prob(Omnibus):                  0.663   Jarque-Bera (JB):                0.174
+Skew:                           0.315   Prob(JB):                        0.917
+Kurtosis:                       2.857   Cond. No.                         17.2
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

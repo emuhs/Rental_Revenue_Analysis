@@ -1,0 +1,26 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:     utilization_aerial   R-squared:                       0.733
+Model:                            OLS   Adj. R-squared:                  0.656
+Method:                 Least Squares   F-statistic:                     9.588
+Date:                Mon, 15 Jul 2024   Prob (F-statistic):            0.00989
+Time:                        15:25:07   Log-Likelihood:                 21.523
+No. Observations:                  10   AIC:                            -37.05
+Df Residuals:                       7   BIC:                            -36.14
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const            0.1117      0.017      6.410      0.000       0.070       0.153
+aerial_count     0.0002   5.79e-05      4.104      0.005       0.000       0.000
+dirt_count   -2.391e-05      0.000     -0.161      0.877      -0.000       0.000
+==============================================================================
+Omnibus:                        1.951   Durbin-Watson:                   1.158
+Prob(Omnibus):                  0.377   Jarque-Bera (JB):                0.964
+Skew:                           0.369   Prob(JB):                        0.617
+Kurtosis:                       1.669   Cond. No.                         537.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
