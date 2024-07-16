@@ -4,7 +4,7 @@ Dep. Variable:     utilization_aerial   R-squared:                       0.740
 Model:                            OLS   Adj. R-squared:                  0.665
 Method:                 Least Squares   F-statistic:                     9.950
 Date:                Mon, 15 Jul 2024   Prob (F-statistic):            0.00899
-Time:                        19:45:00   Log-Likelihood:                 21.707
+Time:                        19:48:00   Log-Likelihood:                 21.707
 No. Observations:                  10   AIC:                            -37.41
 Df Residuals:                       7   BIC:                            -36.51
 Df Model:                           2                                         

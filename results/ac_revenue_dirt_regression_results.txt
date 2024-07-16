@@ -4,7 +4,7 @@ Dep. Variable:           revenue_dirt   R-squared:                       0.990
 Model:                            OLS   Adj. R-squared:                  0.987
 Method:                 Least Squares   F-statistic:                     333.3
 Date:                Mon, 15 Jul 2024   Prob (F-statistic):           1.14e-07
-Time:                        19:45:00   Log-Likelihood:                -121.34
+Time:                        19:48:00   Log-Likelihood:                -121.34
 No. Observations:                  10   AIC:                             248.7
 Df Residuals:                       7   BIC:                             249.6
 Df Model:                           2                                         

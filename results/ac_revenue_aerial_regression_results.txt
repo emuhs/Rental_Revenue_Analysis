@@ -4,7 +4,7 @@ Dep. Variable:         revenue_aerial   R-squared:                       0.934
 Model:                            OLS   Adj. R-squared:                  0.915
 Method:                 Least Squares   F-statistic:                     49.57
 Date:                Mon, 15 Jul 2024   Prob (F-statistic):           7.37e-05
-Time:                        19:45:00   Log-Likelihood:                -144.11
+Time:                        19:48:00   Log-Likelihood:                -144.11
 No. Observations:                  10   AIC:                             294.2
 Df Residuals:                       7   BIC:                             295.1
 Df Model:                           2                                         
