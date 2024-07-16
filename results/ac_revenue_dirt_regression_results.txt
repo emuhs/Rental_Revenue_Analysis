@@ -2,24 +2,24 @@
 ==============================================================================
 Dep. Variable:           revenue_dirt   R-squared:                       0.990
 Model:                            OLS   Adj. R-squared:                  0.987
-Method:                 Least Squares   F-statistic:                     330.8
-Date:                Mon, 15 Jul 2024   Prob (F-statistic):           1.17e-07
-Time:                        15:25:07   Log-Likelihood:                -121.38
-No. Observations:                  10   AIC:                             248.8
-Df Residuals:                       7   BIC:                             249.7
+Method:                 Least Squares   F-statistic:                     333.3
+Date:                Mon, 15 Jul 2024   Prob (F-statistic):           1.14e-07
+Time:                        19:45:00   Log-Likelihood:                -121.34
+No. Observations:                  10   AIC:                             248.7
+Df Residuals:                       7   BIC:                             249.6
 Df Model:                           2                                         
 Covariance Type:            nonrobust                                         
 ================================================================================
                    coef    std err          t      P>|t|      [0.025      0.975]
 --------------------------------------------------------------------------------
-const        -3.177e+04    2.8e+04     -1.135      0.294    -9.8e+04    3.44e+04
-aerial_count   -92.6640     93.055     -0.996      0.353    -312.705     127.377
-dirt_count    5766.0169    239.006     24.125      0.000    5200.857    6331.177
+const        -3.002e+04   2.79e+04     -1.076      0.318    -9.6e+04    3.59e+04
+aerial_count   -97.2184     93.086     -1.044      0.331    -317.331     122.894
+dirt_count    5784.8452    238.837     24.221      0.000    5220.086    6349.604
 ==============================================================================
-Omnibus:                        5.182   Durbin-Watson:                   1.483
-Prob(Omnibus):                  0.075   Jarque-Bera (JB):                1.656
-Skew:                          -0.893   Prob(JB):                        0.437
-Kurtosis:                       3.885   Cond. No.                         537.
+Omnibus:                        6.209   Durbin-Watson:                   1.441
+Prob(Omnibus):                  0.045   Jarque-Bera (JB):                2.126
+Skew:                          -0.990   Prob(JB):                        0.345
+Kurtosis:                       4.087   Cond. No.                         536.
 ==============================================================================
 
 Notes:

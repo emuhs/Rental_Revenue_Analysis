@@ -1,10 +1,10 @@
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:         revenue_aerial   R-squared:                       0.011
-Model:                            OLS   Adj. R-squared:                 -0.112
-Method:                 Least Squares   F-statistic:                   0.09282
-Date:                Mon, 15 Jul 2024   Prob (F-statistic):              0.768
-Time:                        15:25:07   Log-Likelihood:                -157.65
+Dep. Variable:         revenue_aerial   R-squared:                       0.010
+Model:                            OLS   Adj. R-squared:                 -0.114
+Method:                 Least Squares   F-statistic:                   0.08196
+Date:                Mon, 15 Jul 2024   Prob (F-statistic):              0.782
+Time:                        19:45:00   Log-Likelihood:                -157.65
 No. Observations:                  10   AIC:                             319.3
 Df Residuals:                       8   BIC:                             319.9
 Df Model:                           1                                         
@@ -12,13 +12,13 @@ Covariance Type:            nonrobust
 ==============================================================================
                  coef    std err          t      P>|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-const        3.81e+04   5.11e+06      0.007      0.994   -1.17e+07    1.18e+07
-aerial_pct  1.838e+06   6.03e+06      0.305      0.768   -1.21e+07    1.58e+07
+const       1.334e+05    5.1e+06      0.026      0.980   -1.16e+07    1.19e+07
+aerial_pct  1.723e+06   6.02e+06      0.286      0.782   -1.22e+07    1.56e+07
 ==============================================================================
-Omnibus:                       10.687   Durbin-Watson:                   2.457
-Prob(Omnibus):                  0.005   Jarque-Bera (JB):                4.780
-Skew:                           1.523   Prob(JB):                       0.0916
-Kurtosis:                       4.481   Cond. No.                         17.2
+Omnibus:                       10.895   Durbin-Watson:                   2.462
+Prob(Omnibus):                  0.004   Jarque-Bera (JB):                4.903
+Skew:                           1.537   Prob(JB):                       0.0862
+Kurtosis:                       4.522   Cond. No.                         17.1
 ==============================================================================
 
 Notes:

@@ -28,6 +28,7 @@ mm_asset_rental_merged_df = pd.merge(mm_asset_merged_df, rentals_df, on=['asset_
 acq_filt_merged_df = mm_asset_rental_merged_df[mm_asset_rental_merged_df['rental_date'] >= mm_asset_rental_merged_df['acquisition_date']]
 # filter out entries where rental_date is before market_open_date
 fm_source_df = acq_filt_merged_df[acq_filt_merged_df['rental_date'] >= acq_filt_merged_df['market_open_date']]
+fm_source_df = fm_source_df[fm_source_df['rental_revenue']>1]
 
 # save the filtered and merged dataframe to an excel file
 fm_source_df.to_excel('../data/filt_merged_source_df.xlsx', index=False)
@@ -84,9 +85,12 @@ plt.tight_layout()
 # save the plot
 plt.savefig('../figures/market_rental_revenue_ratios_by_asset_category.png')
 
-""" Step 5 - Calculate the financial utilization as Financial Utilization = (Annualized Revenue)/OEC for each market and plot the results.  Save the plot to a new file in the figures folder."""
+""" Step 5 - Calculate the time utilization by asset class.  Calculate the financial utilization as Financial Utilization = (Annualized Revenue)/OEC for each market and plot the results.  Save the plot to a new file in the figures folder."""
 # determine distinct assets and their OEC using the filtered and merged source dataframe
 asset_distinct_source_df = fm_source_df[['market_id','asset_id','oec','equipment_class']].drop_duplicates(subset=['asset_id'], keep='first')
+time_utilization_by_asset = fm_source_df.groupby(['market_id','asset_id','equipment_class'])['rental_date'].count().reset_index()
+time_utilization_by_asset['time_utilization'] = time_utilization_by_asset['rental_date']/12
+time_utilization_by_equipment_class = time_utilization_by_asset.groupby(['market_id','equipment_class'])['time_utilization'].mean().unstack().reset_index()
 
 # calculate the total oec by asset category and market
 total_dirt_oec = asset_distinct_source_df[asset_distinct_source_df['equipment_class'] == 'Dirt'].groupby('market_id')['oec'].sum().reset_index()
@@ -104,6 +108,10 @@ market_utilization_df['aerial_financial_utilization'] = annual_market_revenue_df
 market_utilization_df['dirt_financial_utilization'] = annual_market_revenue_df['rental_revenue_dirt']/market_utilization_df['oec_dirt']
 market_utilization_df['total_financial_utilization'] = annual_market_revenue_df['total_revenue']/market_utilization_df['total_oec']
 market_utilization_df = market_utilization_df[['market_id','aerial_financial_utilization','dirt_financial_utilization','total_financial_utilization']]
+market_utilization_df['aerial_time_utilization'] = time_utilization_by_equipment_class['Aerial']
+market_utilization_df['dirt_time_utilization'] = time_utilization_by_equipment_class['Dirt']
+
+market_utilization_df.to_excel('../data/market_utilization_df.xlsx', index=False)
 
 # plot the merged dataframe
 market_utilization_df.plot(kind='bar', x='market_id')
@@ -286,6 +294,9 @@ for var, filename in dependent_vars_count[:2] + dependent_vars_count[3:5]:
 # handle combined utilization and combined revenue separately
 run_regression(X_count, dependent_vars_count[2][2], f'../results/{dependent_vars_count[2][1]}')
 run_regression(X_count, dependent_vars_count[5][2], f'../results/{dependent_vars_count[5][1]}')
+
+
+
 
 
 
