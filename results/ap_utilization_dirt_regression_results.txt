@@ -3,8 +3,8 @@
 Dep. Variable:       utilization_dirt   R-squared:                       0.135
 Model:                            OLS   Adj. R-squared:                  0.027
 Method:                 Least Squares   F-statistic:                     1.248
-Date:                Mon, 15 Jul 2024   Prob (F-statistic):              0.296
-Time:                        19:48:00   Log-Likelihood:                 18.808
+Date:                Tue, 16 Jul 2024   Prob (F-statistic):              0.296
+Time:                        21:00:37   Log-Likelihood:                 18.808
 No. Observations:                  10   AIC:                            -33.62
 Df Residuals:                       8   BIC:                            -33.01
 Df Model:                           1                                         

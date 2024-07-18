@@ -4,6 +4,8 @@ import os
 import matplotlib.pyplot as plt
 from tabulate import tabulate
 import statsmodels.api as sm
+import seaborn as sns
+from scipy.stats import norm
 
 """Step 1 - Read the excel file and load the data sheets into separate dataframes"""
 # specify path to excel source file in project folder
@@ -111,7 +113,29 @@ market_utilization_df = market_utilization_df[['market_id','aerial_financial_uti
 market_utilization_df['aerial_time_utilization'] = time_utilization_by_equipment_class['Aerial']
 market_utilization_df['dirt_time_utilization'] = time_utilization_by_equipment_class['Dirt']
 
+util_order = ['market_id','aerial_time_utilization','aerial_financial_utilization','dirt_time_utilization','dirt_financial_utilization','total_financial_utilization']
+
+market_utilization_df = market_utilization_df[util_order]
+
 market_utilization_df.to_excel('../data/market_utilization_df.xlsx', index=False)
+
+# calculate the cdf of the market utilization metrics
+market_utilization_cdf = market_utilization_df.copy()
+for column in market_utilization_cdf.columns[1:]:
+    market_utilization_cdf[column] = norm.cdf(market_utilization_cdf[column], market_utilization_cdf[column].mean(), market_utilization_cdf[column].std())
+
+# set the index of the cdf dataframe
+market_utilization_cdf.set_index('market_id', inplace=True)
+
+# create a heatmap of the cdf dataframe
+plt.figure(figsize=(10,10))
+sns.heatmap(market_utilization_cdf, cmap='RdYlGn', annot=True, fmt=".2f")
+plt.title('Heatmap of Normally Distributed Utilization Metrics')
+plt.xlabel('Utilization Metrics')
+plt.ylabel('Market ID')
+plt.tight_layout()
+plt.show()
+
 
 # plot the merged dataframe
 market_utilization_df.plot(kind='bar', x='market_id')
