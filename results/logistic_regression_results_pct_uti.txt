@@ -1,0 +1,14 @@
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:      total_utilization   No. Observations:                   10
+Model:                          Logit   Df Residuals:                        9
+Method:                           MLE   Df Model:                            0
+Date:                Wed, 24 Jul 2024   Pseudo R-squ.:                     inf
+Time:                        21:47:26   Log-Likelihood:                -5.6863
+converged:                       True   LL-Null:                        0.0000
+Covariance Type:            nonrobust   LLR p-value:                       nan
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+aerial_pct    -0.8907      0.802     -1.110      0.267      -2.463       0.682
+==============================================================================

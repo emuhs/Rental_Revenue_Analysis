@@ -1,0 +1,15 @@
+                              Logit Regression Results                              
+====================================================================================
+Dep. Variable:     normalized_total_revenue   No. Observations:                   10
+Model:                                Logit   Df Residuals:                        8
+Method:                                 MLE   Df Model:                            1
+Date:                      Wed, 24 Jul 2024   Pseudo R-squ.:                 0.06477
+Time:                              21:55:50   Log-Likelihood:                -6.4031
+converged:                             True   LL-Null:                       -6.8465
+Covariance Type:                  nonrobust   LLR p-value:                    0.3463
+================================================================================
+                   coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------
+aerial_count     0.0014      0.003      0.479      0.632      -0.004       0.007
+dirt_count       0.0015      0.010      0.155      0.877      -0.018       0.021
+================================================================================

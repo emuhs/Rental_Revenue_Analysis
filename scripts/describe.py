@@ -130,11 +130,10 @@ market_utilization_cdf.set_index('market_id', inplace=True)
 # create a heatmap of the cdf dataframe
 plt.figure(figsize=(10,10))
 sns.heatmap(market_utilization_cdf, cmap='RdYlGn', annot=True, fmt=".2f")
-plt.title('Heatmap of Normally Distributed Utilization Metrics')
+plt.title('Heatmap of Normally Distributed (CDF) Utilization Metrics')
 plt.xlabel('Utilization Metrics')
 plt.ylabel('Market ID')
 plt.tight_layout()
-plt.show()
 
 
 # plot the merged dataframe
@@ -270,7 +269,7 @@ results_df = pd.merge(results_df, utilization_by_class, on=['market_id'], how='i
 results_df = pd.merge(grouped_asset_distinct_source_df, results_df, on=['market_id'], how='inner')
 results_df = results_df.rename(columns={'Aerial':'aerial_count','Dirt':'dirt_count'})
 
-# define function to run and save regression results
+""" # define function to run and save regression results
 def run_regression(X, y, filename):
     X = sm.add_constant(X)
     model = sm.OLS(y, X).fit()
@@ -317,7 +316,24 @@ for var, filename in dependent_vars_count[:2] + dependent_vars_count[3:5]:
 
 # handle combined utilization and combined revenue separately
 run_regression(X_count, dependent_vars_count[2][2], f'../results/{dependent_vars_count[2][1]}')
-run_regression(X_count, dependent_vars_count[5][2], f'../results/{dependent_vars_count[5][1]}')
+run_regression(X_count, dependent_vars_count[5][2], f'../results/{dependent_vars_count[5][1]}') """
+
+""" Step 9 - Conduct a logistic regression analysis """
+
+results_logistic_df = results_df.copy()
+results_logistic_df['total_revenue'] = results_logistic_df['revenue_aerial'] + results_logistic_df['revenue_dirt']
+results_logistic_df['normalized_total_revenue'] = norm.cdf(results_logistic_df['total_revenue'], results_logistic_df['total_revenue'].mean(), results_logistic_df['total_revenue'].std())
+results_logistic_df['total_utilization'] = results_logistic_df['utilization_aerial'] + results_logistic_df['utilization_dirt']
+
+X = results_logistic_df[['aerial_pct']]
+Y = results_logistic_df['normalized_total_revenue']
+
+logit_model = sm.Logit(Y, X).fit()
+
+summary = logit_model.summary()
+
+with open('../results/logistic_regression_results_pct_rev.txt', 'w') as f:
+    f.write(summary.as_text())
 
 
 
